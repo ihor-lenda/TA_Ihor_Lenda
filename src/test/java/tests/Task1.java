@@ -24,7 +24,7 @@ public class Task1 {
         driver.get("https://www.bbc.com"); // Navigates to a page by address
         driver.close();
     }
-    @Test (priority = 1)
+    @Test
     public void checkHeadlineArticleTitle() {
         System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         WebDriver driver = new ChromeDriver(); // Creates a new Chrome instance
@@ -36,7 +36,7 @@ public class Task1 {
         String headlineArticleTitle = driver.findElement(By.xpath("//div[@class='gs-c-promo-body gs-u-display-none gs-u-display-inline-block@m gs-u-mt@xs gs-u-mt0@m gel-1/3@m']//h3[@class='gs-c-promo-heading__title gel-paragon-bold nw-o-link-split__text']")).getText();
         assertEquals(headlineArticleTitle, "Protesters defy heavy security in Belarus"); //actual value changes everyday, so test fails
     }
-    @Test (priority = 2)
+    @Test
     public void checkSecondaryArticlesTitles() {
         System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         WebDriver driver = new ChromeDriver(); // Creates a new Chrome instance
@@ -59,7 +59,7 @@ public class Task1 {
         assertEquals(secondaryArticlesTitlesStrings, expectedTitles); //actual value changes everyday, so test fails
 
     }
-    @Test (priority = 3)
+    @Test
     public void searchHeadlineArticleCategory() {
         System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
