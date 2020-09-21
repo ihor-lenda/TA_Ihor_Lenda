@@ -44,7 +44,8 @@ public class Task1 {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         List<WebElement> secondaryArticlesTitles = driver.findElements(By.xpath("//div[@class='gs-c-promo nw-c-promo gs-o-faux-block-link gs-u-pb gs-u-pb+@m nw-p-default gs-c-promo--inline gs-c-promo--stacked@m nw-u-w-auto gs-c-promo--flex']"));
         List<String> secondaryArticlesTitlesStrings = new ArrayList<>();
-        for (int i =0; i < secondaryArticlesTitles.size(); i++) {
+        for (int i =0; i < secondaryArticlesTitles.size(); i++)
+        {
             secondaryArticlesTitlesStrings.add(i, secondaryArticlesTitles.get(i).getText());
         }
         List<String> expectedTitles = new ArrayList<>();
@@ -70,6 +71,7 @@ public class Task1 {
         assertEquals(headlineArticleTitle, "Cities of Europe"); //actual value changes everyday, so test fails
 
     }
+    //BRANCH_TEST
 }
 
 
