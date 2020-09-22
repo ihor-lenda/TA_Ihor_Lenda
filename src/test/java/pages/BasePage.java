@@ -16,11 +16,12 @@ public class BasePage {
         this.driver = driver;
     }
 
-    public void waitForElementVisibility (long timeout, By locator){
+    public void waitForElementVisibility(long timeout, By locator) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-    public void implicitlyWait(long timeout){
+
+    public void implicitlyWait(long timeout) {
         driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);//неявное ожидание 30 сек
     }
 

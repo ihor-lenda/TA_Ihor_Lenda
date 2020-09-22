@@ -34,23 +34,26 @@ public class BaseTest {
     public BasePage getBasePage() {
         return new BasePage(driver);
     }
+
     public MainPage getMainPage() {
         return new MainPage(driver);
     }
+
     public NewsPage getNewsPage() {
         return new NewsPage(driver);
     }
+
     public CoronavirusPage getCoronavirusPage() {
         return new CoronavirusPage(driver);
     }
+
     public HaveYouSayPage getHaveYouSayPage() {
         return new HaveYouSayPage(driver);
     }
+
     public HowToSharePage getHowToSharePage() {
         return new HowToSharePage(driver);
     }
-
-
 
 
 }

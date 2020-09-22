@@ -12,8 +12,7 @@ public class Task2Tests extends BaseTest {
     public static final String HOW_TO_SHARE_URL = "https://www.bbc.com/news/10725415";
 
     @Test
-    public void submitCoronavirusStoryWithoutTermsAcceptance()
-    {
+    public void submitCoronavirusStoryWithoutTermsAcceptance() {
         getMainPage().clickNewsInMenu();
         getMainPage().waitForElementVisibility(30, getMainPage().signInPopupLocator());
         getMainPage().closeSignInPopup();
@@ -30,14 +29,13 @@ public class Task2Tests extends BaseTest {
         getHowToSharePage().clickSubmitButton();
         assertEquals(getHowToSharePage().getUrl(), HOW_TO_SHARE_URL,
                 "Expected result: The same page is displayed. " +
-                "Actual result: Another page is displayed after invalid submission. ");
+                        "Actual result: Another page is displayed after invalid submission. ");
         assertTrue(getHowToSharePage().isCheckboxErrorMessageDisplayed(), "Expected result: Error message is displayed" +
                 "Actual result: Error message is not displayed");
     }
 
     @Test
-    public void submitCoronavirusStoryWithNameFieldEmpty()
-    {
+    public void submitCoronavirusStoryWithNameFieldEmpty() {
         getMainPage().clickNewsInMenu();
         getMainPage().waitForElementVisibility(30, getMainPage().signInPopupLocator());
         getMainPage().closeSignInPopup();
@@ -58,9 +56,9 @@ public class Task2Tests extends BaseTest {
         assertTrue(getHowToSharePage().isNameCantBeBlankMessageDisplayed(), "Expected result: Error message is displayed" +
                 "Actual result: Error message is not displayed");
     }
+
     @Test
-    public void submitCoronavirusStoryWithStoryFieldEmpty()
-    {
+    public void submitCoronavirusStoryWithStoryFieldEmpty() {
         getMainPage().clickNewsInMenu();
         getMainPage().waitForElementVisibility(30, getMainPage().signInPopupLocator());
         getMainPage().closeSignInPopup();
