@@ -31,9 +31,9 @@ public class BaseTest {
         driver.quit();
     }
 
-    public BasePage getBasePage() {
+    /*public BasePage getBasePage() {
         return new BasePage(driver);
-    }
+    }*/
 
     public MainPage getMainPage() {
         return new MainPage(driver);

@@ -1,6 +1,6 @@
 package tests;
 
-import org.testng.Assert;
+
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -14,15 +14,15 @@ public class Task2Tests extends BaseTest {
     @Test
     public void submitCoronavirusStoryWithoutTermsAcceptance() {
         getMainPage().clickNewsInMenu();
-        getMainPage().waitForElementVisibility(30, getMainPage().signInPopupLocator());
+        getMainPage().waitForElementVisibility(30, getMainPage().getSignInPopupLocator());
         getMainPage().closeSignInPopup();
-        getBasePage().implicitlyWait(5);
+        getMainPage().implicitlyWait(5);
         getNewsPage().clickCoronavirusTab();
-        getBasePage().implicitlyWait(5);
+        getNewsPage().implicitlyWait(5);
         getCoronavirusPage().clickYourCoronavirusStoriesTab();
-        getBasePage().implicitlyWait(5);
+        getCoronavirusPage().implicitlyWait(5);
         getHaveYouSayPage().clickHowToShareWithBBC();
-        getBasePage().implicitlyWait(5);
+        getHaveYouSayPage().implicitlyWait(5);
         getHowToSharePage().typeToTellUsYourStoryField(YOUR_STORY_TEST_TEXT);
         getHowToSharePage().typeToNameInput(NAME_FIELD_TEST_TEXT);
         getHowToSharePage().checkIAmOver16Checkbox();
@@ -37,15 +37,15 @@ public class Task2Tests extends BaseTest {
     @Test
     public void submitCoronavirusStoryWithNameFieldEmpty() {
         getMainPage().clickNewsInMenu();
-        getMainPage().waitForElementVisibility(30, getMainPage().signInPopupLocator());
+        getMainPage().waitForElementVisibility(30, getMainPage().getSignInPopupLocator());
         getMainPage().closeSignInPopup();
-        getBasePage().implicitlyWait(5);
+        getMainPage().implicitlyWait(5);
         getNewsPage().clickCoronavirusTab();
-        getBasePage().implicitlyWait(5);
+        getNewsPage().implicitlyWait(5);
         getCoronavirusPage().clickYourCoronavirusStoriesTab();
-        getBasePage().implicitlyWait(5);
+        getCoronavirusPage().implicitlyWait(5);
         getHaveYouSayPage().clickHowToShareWithBBC();
-        getBasePage().implicitlyWait(5);
+        getHaveYouSayPage().implicitlyWait(5);
         getHowToSharePage().typeToTellUsYourStoryField(YOUR_STORY_TEST_TEXT);
         getHowToSharePage().checkIAmOver16Checkbox();
         getHowToSharePage().checkTermsAgreementCheckbox();
@@ -60,15 +60,15 @@ public class Task2Tests extends BaseTest {
     @Test
     public void submitCoronavirusStoryWithStoryFieldEmpty() {
         getMainPage().clickNewsInMenu();
-        getMainPage().waitForElementVisibility(30, getMainPage().signInPopupLocator());
+        getMainPage().waitForElementVisibility(30, getMainPage().getSignInPopupLocator());
         getMainPage().closeSignInPopup();
-        getBasePage().implicitlyWait(5);
+        getMainPage().implicitlyWait(5);
         getNewsPage().clickCoronavirusTab();
-        getBasePage().implicitlyWait(5);
+        getNewsPage().implicitlyWait(5);
         getCoronavirusPage().clickYourCoronavirusStoriesTab();
-        getBasePage().implicitlyWait(5);
+        getCoronavirusPage().implicitlyWait(5);
         getHaveYouSayPage().clickHowToShareWithBBC();
-        getBasePage().implicitlyWait(5);
+        getHaveYouSayPage().implicitlyWait(5);
         getHowToSharePage().typeToNameInput(NAME_FIELD_TEST_TEXT);
         getHowToSharePage().checkIAmOver16Checkbox();
         getHowToSharePage().checkTermsAgreementCheckbox();

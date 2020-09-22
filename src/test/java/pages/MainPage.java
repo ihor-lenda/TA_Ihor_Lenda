@@ -20,7 +20,7 @@ public class MainPage extends BasePage {
         driver.findElement(exitSignInPopupButton).click();
     }
 
-    public By signInPopupLocator() {
+    public By getSignInPopupLocator() {
         return signInPopup;
     }
 
