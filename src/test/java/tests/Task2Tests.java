@@ -12,7 +12,7 @@ public class Task2Tests extends BaseTest {
     public static final String YOUR_STORY_TEST_TEXT = "HABEREhibereHABEREhibereHOP!";
     public static final String NAME_FIELD_TEST_TEXT = "Test user";
     public static final String HOW_TO_SHARE_URL = "https://www.bbc.com/news/10725415";
-    Dictionary<String, String> FIELD_VALUES = new Hashtable<String, String>() {
+    Dictionary<String, String> FORM_FIELD_VALUES = new Hashtable<String, String>() {
         {
             put("Tell us your story. ", YOUR_STORY_TEST_TEXT);
             put("Name", NAME_FIELD_TEST_TEXT);
@@ -28,9 +28,7 @@ public class Task2Tests extends BaseTest {
                 .clickYourCoronavirusStoriesTab()
                 .clickHowToShareWithBBC()
                 .gotoForm()
-                .fillForm(FIELD_VALUES)
-                /*.typeToTellUsYourStoryField(YOUR_STORY_TEST_TEXT)
-                .typeToNameInput(NAME_FIELD_TEST_TEXT)*/
+                .fillForm(FORM_FIELD_VALUES)
                 .checkIAmOver16Checkbox()
                 .clickSubmitButton()
                 .getUrl();
