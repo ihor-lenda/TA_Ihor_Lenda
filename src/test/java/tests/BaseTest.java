@@ -3,16 +3,13 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import pages.*;
 
-import java.util.concurrent.TimeUnit;
-
 public class BaseTest {
-    private WebDriver driver;
     private static final String HOME_PAGE_URL = "https://www.bbc.com/";
+    private WebDriver driver;
 
     @BeforeTest
     public void profileSetUp() {
@@ -31,27 +28,11 @@ public class BaseTest {
         driver.quit();
     }
 
-    public BasePage getBasePage() {
-        return new BasePage(driver);
-    }
-
     public MainPage getMainPage() {
         return new MainPage(driver);
     }
 
-    public NewsPage getNewsPage() {
-        return new NewsPage(driver);
-    }
-
-    public CoronavirusPage getCoronavirusPage() {
-        return new CoronavirusPage(driver);
-    }
-
-    public HaveYouSayPage getHaveYouSayPage() {
-        return new HaveYouSayPage(driver);
-    }
-
-    public HowToSharePage getHowToSharePage() {
+        public HowToSharePage getHowToSharePage() {
         return new HowToSharePage(driver);
     }
 

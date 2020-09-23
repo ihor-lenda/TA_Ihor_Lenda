@@ -1,12 +1,9 @@
 package tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Dictionary;
-import java.util.HashMap;
 import java.util.Hashtable;
-import java.util.Map;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -15,20 +12,25 @@ public class Task2Tests extends BaseTest {
     public static final String YOUR_STORY_TEST_TEXT = "HABEREhibereHABEREhibereHOP!";
     public static final String NAME_FIELD_TEST_TEXT = "Test user";
     public static final String HOW_TO_SHARE_URL = "https://www.bbc.com/news/10725415";
-    Dictionary<String, String> FIELD_VALUES = new Hashtable<String, String>();
+    Dictionary<String, String> FIELD_VALUES = new Hashtable<String, String>() {
+        {
+            put("Tell us your story. ", YOUR_STORY_TEST_TEXT);
+            put("Name", NAME_FIELD_TEST_TEXT);
+        }
+    };
 
 
     @Test
     public void submitCoronavirusStoryWithoutTermsAcceptance() {
-        FIELD_VALUES.put("Tell us your story. ", YOUR_STORY_TEST_TEXT);
-        FIELD_VALUES.put("Name", NAME_FIELD_TEST_TEXT);
         String URL = getMainPage().clickNewsInMenu()
                 .closeSignInPopup()
                 .clickCoronavirusTab()
                 .clickYourCoronavirusStoriesTab()
                 .clickHowToShareWithBBC()
-                .typeToTellUsYourStoryField(YOUR_STORY_TEST_TEXT)
-                .typeToNameInput(NAME_FIELD_TEST_TEXT)
+                .gotoForm()
+                .fillForm(FIELD_VALUES)
+                /*.typeToTellUsYourStoryField(YOUR_STORY_TEST_TEXT)
+                .typeToNameInput(NAME_FIELD_TEST_TEXT)*/
                 .checkIAmOver16Checkbox()
                 .clickSubmitButton()
                 .getUrl();

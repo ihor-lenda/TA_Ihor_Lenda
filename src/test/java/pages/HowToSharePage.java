@@ -70,4 +70,8 @@ public class HowToSharePage extends BasePage {
         return driver.findElement(storyCantBeBlankMessage).isDisplayed();
     }
 
+    public Form gotoForm(){
+        return new Form(driver);
+    }
+
 }

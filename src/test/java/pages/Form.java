@@ -12,7 +12,7 @@ public class Form extends BasePage{
         super(driver);
     }
 
-     public HowToSharePage FillForm(Dictionary<String, String> values){
+     public HowToSharePage fillForm(Dictionary<String, String> values){
         Enumeration keys = values.keys();
         while (keys.hasMoreElements()) {
             driver.findElement(By.xpath("//*[@placeholder='" + keys.nextElement().toString() + "']")).sendKeys(values.get(values.keys().nextElement()));
