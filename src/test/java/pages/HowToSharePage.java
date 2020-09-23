@@ -21,12 +21,14 @@ public class HowToSharePage extends BasePage {
     private By storyCantBeBlankMessage = By.xpath("//div[@class='long-text-input-container']/div[contains(text(), \"can't be blank\")]");
 
 
-    public void typeToTellUsYourStoryField(String text) {
+    public HowToSharePage typeToTellUsYourStoryField(String text) {
         driver.findElement(tellUsYourStoryField).sendKeys(text);
+        return this;
     }
 
-    public void typeToNameInput(String text) {
+    public HowToSharePage typeToNameInput(String text) {
         driver.findElement(nameInput).sendKeys(text);
+        return this;
     }
 
     public void typeToEmailInput(String text) {
@@ -41,16 +43,19 @@ public class HowToSharePage extends BasePage {
         driver.findElement(locationInput).sendKeys(text);
     }
 
-    public void checkIAmOver16Checkbox() {
+    public HowToSharePage checkIAmOver16Checkbox() {
         driver.findElement(iAmOver16Checkbox).click();
+        return this;
     }
 
-    public void checkTermsAgreementCheckbox() {
+    public HowToSharePage checkTermsAgreementCheckbox() {
         driver.findElement(termsAgreementCheckbox).click();
+        return this;
     }
 
-    public void clickSubmitButton() {
+    public HowToSharePage clickSubmitButton() {
         driver.findElement(submitButton).click();
+        return this;
     }
 
     public boolean isCheckboxErrorMessageDisplayed() {

@@ -8,20 +8,16 @@ public class MainPage extends BasePage {
         super(driver);
     }
 
-    private By newsLinkInMenu = By.xpath("//div[@class='orb-nav-section orb-nav-links orb-nav-focus']/ul/li[@class='orb-nav-newsdotcom']/a[@href='https://www.bbc.com/news']");
-    private By signInPopup = By.xpath("//div[@class='sign_in-container']");
-    private By exitSignInPopupButton = By.xpath("//button[@class='sign_in-exit']");
+    private final By newsLinkInMenu = By.xpath("//div[@class='orb-nav-section orb-nav-links orb-nav-focus']/ul/li[@class='orb-nav-newsdotcom']/a[@href='https://www.bbc.com/news']");
 
-    public void clickNewsInMenu() {
+
+    public NewsPage clickNewsInMenu() {
         driver.findElement(newsLinkInMenu).click();
+        return new NewsPage(driver);
     }
 
-    public void closeSignInPopup() {
-        driver.findElement(exitSignInPopupButton).click();
-    }
 
-    public By signInPopupLocator() {
-        return signInPopup;
-    }
+
+
 
 }
